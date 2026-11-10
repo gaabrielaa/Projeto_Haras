@@ -1,0 +1,396 @@
+:root {
+  --marrom: #4b3426;
+  --marrom-claro: #7a5a43;
+  --bege: #f4ede3;
+  --bege-escuro: #e6d9c6;
+  --verde: #5b7553;
+  --vermelho: #a63d2f;
+  --texto: #2e2620;
+  --texto-suave: #7b6f64;
+  --borda: #d9cdbb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bege);
+  color: var(--texto);
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 16px;
+  color: var(--marrom);
+}
+
+/* ---------- formulário e botões ---------- */
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.campo input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.campo input:focus {
+  outline: 2px solid var(--verde);
+  border-color: var(--verde);
+}
+
+.botao {
+  background: var(--marrom);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: var(--marrom-claro);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.botao-total {
+  width: 100%;
+}
+
+.mensagem-erro {
+  background: #f8e3df;
+  color: var(--vermelho);
+  border: 1px solid #e3b7af;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+/* ---------- tela de login ---------- */
+.login-pagina {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.login-caixa {
+  background: #fff;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+}
+
+.login-caixa h1 {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.login-subtitulo {
+  text-align: center;
+  color: var(--texto-suave);
+  margin: 0 0 24px;
+}
+
+/* ---------- layout com barra lateral ---------- */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.menu-lateral {
+  width: 220px;
+  background: var(--marrom);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-lateral .logo {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.menu-lateral a {
+  color: var(--bege-escuro);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+.menu-lateral a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-lateral a.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.menu-sair {
+  margin-top: auto;
+  background: none;
+  border: 1px solid var(--bege-escuro);
+  color: var(--bege-escuro);
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.conteudo {
+  flex: 1;
+  padding: 32px;
+  min-width: 0;
+}
+
+/* ---------- celular: o menu vira uma barra no topo ---------- */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+  }
+
+  .menu-lateral .logo {
+    margin: 0 12px 0 0;
+  }
+
+  .menu-lateral a {
+    margin: 0;
+  }
+
+  .menu-sair {
+    margin: 0 0 0 auto;
+  }
+
+  .conteudo {
+    padding: 20px 16px;
+  }
+}
+
+/* ---------- páginas de cadastro ---------- */
+.cabecalho-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.cabecalho-pagina h1 {
+  margin: 0;
+}
+
+.mensagem-sucesso {
+  background: #e6efe3;
+  color: #3d5736;
+  border: 1px solid #c3d6bd;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.tabela-area {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borda);
+  white-space: nowrap;
+}
+
+.tabela th {
+  background: var(--bege-escuro);
+  color: var(--marrom);
+  font-size: 0.85rem;
+}
+
+.tabela tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela-vazia {
+  text-align: center;
+  color: var(--texto-suave);
+}
+
+.acoes {
+  display: flex;
+  gap: 6px;
+}
+
+/* ---------- botões extras ---------- */
+.botao-pequeno {
+  padding: 5px 10px;
+  font-size: 0.85rem;
+}
+
+.botao-claro {
+  background: #fff;
+  color: var(--marrom);
+  border: 1px solid var(--borda);
+}
+
+.botao-claro:hover {
+  background: var(--bege);
+}
+
+.botao-perigo {
+  background: #fff;
+  color: var(--vermelho);
+  border: 1px solid #e3b7af;
+}
+
+.botao-perigo:hover {
+  background: #f8e3df;
+}
+
+/* ---------- status da baia ---------- */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge-livre {
+  background: #e6efe3;
+  color: #3d5736;
+}
+
+.badge-ocupada {
+  background: #f1e1d6;
+  color: #8a4b2a;
+}
+
+/* ---------- janela (modal) ---------- */
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(46, 38, 32, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10;
+}
+
+.modal-caixa {
+  background: #fff;
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.modal-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-topo h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--marrom);
+}
+
+.modal-fechar {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--texto-suave);
+}
+
+.modal-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* ---------- campos extras ---------- */
+.campo select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.campo select:focus {
+  outline: 2px solid var(--verde);
+  border-color: var(--verde);
+}
+
+.dica {
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  margin: 6px 0 0;
+}
+
+.detalhes {
+  margin: 0 0 16px;
+}
+
+.detalhes dt {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-top: 12px;
+}
+
+.detalhes dd {
+  margin: 2px 0 0;
+}
