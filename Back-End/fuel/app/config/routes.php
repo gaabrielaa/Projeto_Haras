@@ -15,6 +15,8 @@ return array(
     	'api/usuarios/(:num)' => 'api/usuarios/item/$1',
     	'api/baias/(:num)'    => 'api/baias/item/$1',
     	'api/cavalos/(:num)'  => 'api/cavalos/item/$1',
+    	'api/servicos/(:num)'     => 'api/servicos/item/$1',
+    	'api/agendamentos/(:num)' => 'api/agendamentos/item/$1',
 	/**
 	 * -------------------------------------------------------------------------
 	 *  Default route

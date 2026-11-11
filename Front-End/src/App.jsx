@@ -4,6 +4,9 @@ import Dashboard from './pages/Dashboard';
 import Cavalos from './pages/Cavalos';
 import Baias from './pages/Baias';
 import Proprietarios from './pages/Proprietarios';
+import Servicos from './pages/Servicos';
+import Agendamentos from './pages/Agendamentos';
+import QuemSomos from './pages/QuemSomos';
 import Layout from './components/Layout';
 import RotaProtegida from './components/RotaProtegida';
 
@@ -20,6 +23,9 @@ function App() {
             <Route path="/cavalos" element={<Cavalos />} />
             <Route path="/baias" element={<Baias />} />
             <Route path="/proprietarios" element={<Proprietarios />} />
+            <Route path="/servicos" element={<Servicos />} />
+            <Route path="/agendamentos" element={<Agendamentos />} />
+            <Route path="/quem-somos" element={<QuemSomos />} />
           </Route>
         </Route>
       </Routes>

@@ -17,6 +17,9 @@ function Layout() {
         <NavLink to="/cavalos">Cavalos</NavLink>
         <NavLink to="/baias">Baias</NavLink>
         <NavLink to="/proprietarios">Proprietários</NavLink>
+        <NavLink to="/servicos">Serviços</NavLink>
+        <NavLink to="/agendamentos">Agendamentos</NavLink>
+        <NavLink to="/quem-somos">Quem Somos</NavLink>
         <button className="menu-sair" onClick={sair}>Sair</button>
       </nav>
       <main className="conteudo">

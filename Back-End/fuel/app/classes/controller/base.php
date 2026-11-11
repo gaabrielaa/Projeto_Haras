@@ -8,6 +8,9 @@ class Controller_Base extends Controller_Rest
 {
     protected $rest_format = 'json';
 
+    // Lista vazia deve responder 200 com [] (e não 204 sem conteúdo)
+    protected $no_data_status = 200;
+
     // Ações que podem ser chamadas sem token, no formato "metodo_acao"
     protected $acoes_publicas = array();
 
