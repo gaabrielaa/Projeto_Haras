@@ -27,7 +27,7 @@ h1 {
   color: var(--marrom);
 }
 
-/* ---------- formulário e botões ---------- */
+/* formulário e botões */
 .campo {
   margin-bottom: 16px;
 }
@@ -85,7 +85,7 @@ h1 {
   font-size: 0.9rem;
 }
 
-/* ---------- tela de login ---------- */
+/* tela de login */
 .login-pagina {
   min-height: 100vh;
   display: flex;
@@ -114,7 +114,7 @@ h1 {
   margin: 0 0 24px;
 }
 
-/* ---------- layout com barra lateral ---------- */
+/* layout barra lateral */
 .app {
   display: flex;
   min-height: 100vh;
@@ -168,7 +168,7 @@ h1 {
   min-width: 0;
 }
 
-/* ---------- celular: o menu vira uma barra no topo ---------- */
+/* mobile: o menu vira uma barra no topo */
 @media (max-width: 768px) {
   .app {
     flex-direction: column;
@@ -200,7 +200,7 @@ h1 {
   }
 }
 
-/* ---------- páginas de cadastro ---------- */
+/* páginas de cadastro */
 .cabecalho-pagina {
   display: flex;
   justify-content: space-between;
@@ -264,7 +264,7 @@ h1 {
   gap: 6px;
 }
 
-/* ---------- botões extras ---------- */
+/* botões extras */
 .botao-pequeno {
   padding: 5px 10px;
   font-size: 0.85rem;
@@ -290,7 +290,7 @@ h1 {
   background: #f8e3df;
 }
 
-/* ---------- status da baia ---------- */
+/* status da baia */
 .badge {
   display: inline-block;
   padding: 3px 10px;
@@ -309,7 +309,6 @@ h1 {
   color: #8a4b2a;
 }
 
-/* ---------- janela (modal) ---------- */
 .modal-fundo {
   position: fixed;
   inset: 0;
@@ -360,7 +359,6 @@ h1 {
   margin-top: 8px;
 }
 
-/* ---------- campos extras ---------- */
 .campo select {
   width: 100%;
   padding: 10px 12px;
@@ -395,7 +393,7 @@ h1 {
   margin: 2px 0 0;
 }
 
-/* ---------- dashboard ---------- */
+/* dashboard */
 .indicadores {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -427,7 +425,7 @@ h1 {
   margin: 0 0 12px;
 }
 
-/* ---------- quem somos ---------- */
+/* quem somos */
 .caixa {
   background: #fff;
   border: 1px solid var(--borda);
@@ -447,7 +445,7 @@ h1 {
   line-height: 1.8;
 }
 
-/* ---------- ajustes finais ---------- */
+/* ajustes finais */
 button,
 input,
 select {
@@ -458,7 +456,6 @@ select {
   background: var(--bege);
 }
 
-/* menu fixo na lateral enquanto a página rola (só no computador) */
 .menu-lateral {
   position: sticky;
   top: 0;
@@ -475,7 +472,7 @@ select {
   }
 }
 
-/* ---------- dashboard ---------- */
+/* dashboard */
 .dash-topo {
   background: var(--marrom);
   border-radius: 8px;

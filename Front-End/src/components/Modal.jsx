@@ -1,4 +1,4 @@
-// Janela usada pelos formulários e pela visualização
+// usada pelos formulários e pela visualização
 function Modal({ titulo, aoFechar, children }) {
   return (
     <div className="modal-fundo">

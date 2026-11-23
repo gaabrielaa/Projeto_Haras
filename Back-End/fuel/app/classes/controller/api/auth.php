@@ -1,6 +1,6 @@
 <?php
-// POST /api/auth/login  -> login (público)
-// GET  /api/auth/eu     -> dados do usuário logado (exige token)
+// post /api/auth/login   login (público)
+// get  /api/auth/eu      dados do usuário logado (exige token)
 class Controller_Api_Auth extends Controller_Base
 {
     protected $acoes_publicas = array('post_login');

@@ -9,7 +9,7 @@ import {
 
 const FORM_VAZIO = { nome_servico: '', preco: '' };
 
-// O preço vem do banco como "80.50" e é mostrado como R$ 80,50
+// o preço vem do banco como 80.50 e é mostrado como R$ 80,50
 function formatarPreco(valor) {
   return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
@@ -65,7 +65,6 @@ function Servicos() {
     evento.preventDefault();
     setErroForm('');
 
-    // Validação no front-end (o back-end valida de novo)
     if (form.nome_servico.trim() === '') {
       setErroForm('Informe o nome do serviço.');
       return;
@@ -109,7 +108,7 @@ function Servicos() {
       setMensagem('Serviço excluído.');
       await carregar();
     } catch (erroApi) {
-      // Ex.: serviço que já tem agendamentos não pode ser excluído
+      // ex: serviço que já tem agendamentos não pode ser excluído
       setErro(erroApi.message);
     }
   }

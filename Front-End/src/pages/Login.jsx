@@ -13,7 +13,6 @@ function Login() {
     evento.preventDefault();
     setErro('');
 
-    // Validação dos campos no front-end
     if (email.trim() === '' || senha === '') {
       setErro('Preencha o e-mail e a senha.');
       return;

@@ -1,8 +1,8 @@
 <?php
-// Acesso à tabela baias
+// acesso à tabela baias
 class Model_Baia extends Model
 {
-    // Lista as baias já com o cavalo que ocupa cada uma (se houver)
+    // lista as baias com o cavalo que ocupa cada uma, se houver
     public static function listar()
     {
         return DB::select(
@@ -39,7 +39,7 @@ class Model_Baia extends Model
         return count($linhas) > 0 ? $linhas[0] : null;
     }
 
-    // Devolve o cavalo que está na baia, ou null se estiver livre
+    // devolve o cavalo que está na baia, ou null se estiver livre
     public static function buscar_ocupante($baia_id)
     {
         $linhas = DB::select('id', 'nome')
@@ -51,7 +51,6 @@ class Model_Baia extends Model
         return count($linhas) > 0 ? $linhas[0] : null;
     }
 
-    // Toda baia nova começa livre
     public static function criar($numero, $tamanho)
     {
         $resultado = DB::insert('baias')
@@ -73,7 +72,6 @@ class Model_Baia extends Model
             ->execute();
     }
 
-    // Usada pelo model de cavalos: 'livre' ou 'ocupada'
     public static function definir_status($id, $status)
     {
         DB::update('baias')

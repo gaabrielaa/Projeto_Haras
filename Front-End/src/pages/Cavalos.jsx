@@ -6,7 +6,6 @@ import { listarBaias } from '../services/baias';
 
 const FORM_VAZIO = { nome: '', raca: '', data_nascimento: '', proprietario_id: '', baia_id: '' };
 
-// a data vem como 2018-05-10 e é mostrada como 10/05/2018
 function formatarData(data) {
   if (!data) return '-';
   const [ano, mes, dia] = data.split('-');
@@ -44,7 +43,6 @@ function Cavalos() {
     carregar();
   }, []);
 
-  // só baias livres podem ser escolhidas (mais a baia atual do cavalo, ao editar).
   // os ids vêm como texto da API, comparação com String().
   const baiasDisponiveis = baias.filter(
     (b) => b.status === 'livre' || String(b.id) === baiaOriginal
@@ -178,7 +176,7 @@ function Cavalos() {
         </table>
       </div>
 
-      {/* Visualizar informações */}
+      {/* visualizar informações */}
       {visualizando && (
         <Modal titulo={visualizando.nome} aoFechar={() => setVisualizando(null)}>
           <dl className="detalhes">
@@ -197,7 +195,7 @@ function Cavalos() {
         </Modal>
       )}
 
-      {/* Cadastrar / editar */}
+      {/* cadastrar / editar */}
       {modalAberto && (
         <Modal
           titulo={editandoId === null ? 'Novo cavalo' : 'Editar cavalo'}

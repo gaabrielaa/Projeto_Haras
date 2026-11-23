@@ -1,9 +1,9 @@
 <?php
-// get    /api/cavalos     -> lista
-// post   /api/cavalos     -> cadastra
-// get    /api/cavalos/5   -> consulta um
-// put    /api/cavalos/5   -> edita
-// delete /api/cavalos/5   -> exclui (libera a baia e remove os agendamentos)
+// get    /api/cavalos      lista
+// post   /api/cavalos      cadastra
+// get    /api/cavalos/5    consulta um
+// put    /api/cavalos/5    edita
+// delete /api/cavalos/5    exclui e libera a baia e remove os agendamentos
 class Controller_Api_Cavalos extends Controller_Base
 {
     public function get_index()
@@ -93,8 +93,8 @@ class Controller_Api_Cavalos extends Controller_Base
         return $this->response(array('mensagem' => 'Cavalo excluído.'));
     }
 
-    // valida os dados. Devolve array($erros, $valores_limpos).
-    // $cavalo_id é o cavalo que está sendo editado (0 se for cadastro novo).
+    // valida os dados
+    // $cavalo_id é o cavalo que está sendo editado, 0 se for cadastro novo
     private function validar($dados, $cavalo_id = 0)
     {
         $nome       = trim((string) Arr::get($dados, 'nome', ''));
@@ -131,7 +131,7 @@ class Controller_Api_Cavalos extends Controller_Base
             $erros[] = 'Selecione um proprietário válido.';
         }
 
-        // só pode escolher baia livre (ou a baia que o próprio cavalo já ocupa)
+        // só pode escolher baias livre ou a baia que o próprio cavalo já ocupa
         if ($baia_id !== null)
         {
             if (Model_Baia::buscar($baia_id) === null)

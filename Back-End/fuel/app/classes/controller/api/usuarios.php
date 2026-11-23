@@ -1,9 +1,9 @@
 <?php
-// GET    /api/usuarios     -> lista
-// POST   /api/usuarios     -> cadastro (público)
-// GET    /api/usuarios/5   -> consulta
-// PUT    /api/usuarios/5   -> edita (a senha só muda se for enviada)
-// DELETE /api/usuarios/5   -> exclui (bloqueado se tiver cavalos)
+// get    /api/usuarios      lista
+// post   /api/usuarios      cadastra (público)
+// get    /api/usuarios/5    consulta
+// put    /api/usuarios/5    edita, a senha só muda se for enviada
+// delete /api/usuarios/5    exclui e bloquea se tiver cavalos
 class Controller_Api_Usuarios extends Controller_Base
 {
     protected $acoes_publicas = array('post_index');
@@ -35,7 +35,7 @@ class Controller_Api_Usuarios extends Controller_Base
             return $this->response(array('erro' => implode(' ', $erros)), 400);
         }
 
-        // Impede e-mail duplicado
+        // impede e-mail duplicado
         if (Model_Usuario::buscar_por_email($c['email']) !== null)
         {
             return $this->response(array('erro' => 'Já existe um usuário com esse e-mail.'), 409);
@@ -68,7 +68,6 @@ class Controller_Api_Usuarios extends Controller_Base
             return $this->response(array('erro' => implode(' ', $erros)), 400);
         }
 
-        // O e-mail pode ser o do próprio usuário, mas não o de outro
         $existente = Model_Usuario::buscar_por_email($c['email']);
 
         if ($existente !== null && (int) $existente['id'] !== $id)

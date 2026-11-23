@@ -14,7 +14,7 @@ function formatarPreco(valor) {
   return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-// O banco devolve 2026-11-20 14:30:00 e a tela mostra 20/11/2026 às 14:30
+// o banco devolve 2026-11-20 14:30:00 e a tela mostra 20/11/2026 às 14:30
 function formatarDataHora(texto) {
   if (!texto) return '-';
   const [data, hora] = texto.split(' ');

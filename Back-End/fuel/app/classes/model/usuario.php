@@ -1,8 +1,8 @@
 <?php
-// Acesso à tabela usuarios
+// tabela usuarios
 class Model_Usuario extends Model
 {
-    // Lista sem a senha
+    // lista sem a senha
     public static function listar()
     {
         return DB::select('id', 'nome', 'email', 'telefone')
@@ -12,7 +12,7 @@ class Model_Usuario extends Model
             ->as_array();
     }
 
-    // Usada no login (traz a senha para conferir o hash)
+    // usada no login, traz a senha para conferir o hash
     public static function buscar_por_email($email)
     {
         $linhas = DB::select('id', 'nome', 'email', 'senha', 'telefone')
@@ -24,7 +24,6 @@ class Model_Usuario extends Model
         return count($linhas) > 0 ? $linhas[0] : null;
     }
 
-    // Esta NÃO traz a senha
     public static function buscar_por_id($id)
     {
         $linhas = DB::select('id', 'nome', 'email', 'telefone', 'created_at')
@@ -36,7 +35,6 @@ class Model_Usuario extends Model
         return count($linhas) > 0 ? $linhas[0] : null;
     }
 
-    // Insere o usuário e devolve o id gerado
     public static function criar($nome, $email, $senha_hash, $telefone)
     {
         $resultado = DB::insert('usuarios')
@@ -51,7 +49,7 @@ class Model_Usuario extends Model
         return (int) $resultado[0];
     }
 
-    // Só troca a senha se $senha_hash for informado
+    // só troca a senha se $senha_hash for informado
     public static function atualizar($id, $nome, $email, $telefone, $senha_hash = null)
     {
         $campos = array('nome' => $nome, 'email' => $email, 'telefone' => $telefone);
@@ -69,7 +67,6 @@ class Model_Usuario extends Model
         DB::delete('usuarios')->where('id', '=', $id)->execute();
     }
 
-    // Quantos cavalos o proprietário tem
     public static function contar_cavalos($id)
     {
         return (int) DB::select(DB::expr('COUNT(*) AS total'))

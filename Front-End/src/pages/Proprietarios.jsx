@@ -62,7 +62,6 @@ function Proprietarios() {
     evento.preventDefault();
     setErroForm('');
 
-    // Validação no front-end (o back-end valida de novo)
     if (form.nome.trim() === '') {
       setErroForm('Informe o nome.');
       return;

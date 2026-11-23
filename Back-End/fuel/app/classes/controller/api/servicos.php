@@ -1,9 +1,9 @@
 <?php
-// GET    /api/servicos     -> lista
-// POST   /api/servicos     -> cadastra
-// GET    /api/servicos/5   -> consulta um
-// PUT    /api/servicos/5   -> edita nome e preço
-// DELETE /api/servicos/5   -> exclui (bloqueado se tiver agendamentos)
+// get    /api/servicos      lista
+// post   /api/servicos      cadastra
+// get    /api/servicos/5    consulta um
+// put    /api/servicos/5    edita nome e preço
+// delete /api/servicos/5    exclui mas é bloqueado se tiver agendamentos
 class Controller_Api_Servicos extends Controller_Base
 {
     public function get_index()
@@ -78,7 +78,6 @@ class Controller_Api_Servicos extends Controller_Base
         return $this->response(array('mensagem' => 'Serviço excluído.'));
     }
 
-    // Devolve array(mensagem_de_erro, nome, preco)
     private function validar($dados)
     {
         $nome  = trim((string) Arr::get($dados, 'nome_servico', ''));

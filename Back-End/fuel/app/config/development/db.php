@@ -1,5 +1,5 @@
 <?php
-// Conexão com o banco "haras" (MySQL)
+// conexão com o banco haras
 return array(
     'default' => array(
         'type' => 'mysqli',

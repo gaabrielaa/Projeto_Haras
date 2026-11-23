@@ -3,14 +3,12 @@ import { carregarDashboard } from '../services/dashboard';
 
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 
-// O banco devolve 2026-11-20 14:30:00. Aqui vira { dia: '20', mes: 'nov', hora: '14:30' }
 function separarDataHora(texto) {
   const [data, hora] = texto.split(' ');
   const [, mes, dia] = data.split('-');
   return { dia: dia, mes: MESES[Number(mes) - 1], hora: hora.slice(0, 5) };
 }
 
-// Ex.: "Quarta-feira, 11 de novembro de 2026"
 function dataDeHoje() {
   const texto = new Date().toLocaleDateString('pt-BR', {
     weekday: 'long',
@@ -25,7 +23,6 @@ function Dashboard() {
   const [dados, setDados] = useState(null);
   const [erro, setErro] = useState('');
 
-  // Nome do usuário guardado no login
   const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
 
   useEffect(() => {
@@ -69,7 +66,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Agendamentos recentes */}
           <div>
             <h2 className="subtitulo">Agendamentos recentes</h2>
             <div className="agenda-lista">

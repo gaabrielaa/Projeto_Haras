@@ -1,5 +1,5 @@
 <?php
-// Acesso à tabela servicos
+// tabela servicos
 class Model_Servico extends Model
 {
     public static function listar()
@@ -44,7 +44,6 @@ class Model_Servico extends Model
         DB::delete('servicos')->where('id', '=', $id)->execute();
     }
 
-    // Quantos agendamentos usam este serviço
     public static function contar_agendamentos($id)
     {
         return (int) DB::select(DB::expr('COUNT(*) AS total'))

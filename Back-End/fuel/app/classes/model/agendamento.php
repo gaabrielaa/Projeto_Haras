@@ -1,8 +1,7 @@
 <?php
-// Acesso à tabela cavalo_servico (agendamentos)
+// Acesso à tabela cavalo servico (agendamentos)
 class Model_Agendamento extends Model
 {
-    // Consulta base: agendamento + cavalo + serviço + proprietário
     private static function consulta_base()
     {
         return DB::select(
@@ -27,7 +26,7 @@ class Model_Agendamento extends Model
             ->as_array();
     }
 
-    // Os últimos agendamentos cadastrados
+    // últimos agendamentos cadastrados
     public static function recentes($limite)
     {
         return self::consulta_base()

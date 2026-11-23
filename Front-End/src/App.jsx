@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
 
-        {/* Telas que exigem login */}
+        {/* telas que exigem login */}
         <Route element={<RotaProtegida />}>
           <Route element={<Layout />}>
             <Route path="/" element={<Dashboard />} />

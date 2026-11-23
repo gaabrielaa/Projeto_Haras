@@ -2,7 +2,6 @@
 // acesso à tabela cavalos, regra de ocupação das baias.
 class Model_Cavalo extends Model
 {
-    // consulta base: cavalo + nome do proprietário + número da baia
     private static function consulta_base()
     {
         return DB::select(
@@ -60,7 +59,7 @@ class Model_Cavalo extends Model
         }
     }
 
-    // atualiza o cavalo. Se a baia mudou, libera a antiga e ocupa a nova
+    // atualiza o cavalo, se a baia mudou, libera a antiga e ocupa a nova
     public static function atualizar($id, $nome, $raca, $nascimento, $proprietario_id, $nova_baia_id)
     {
         $atual = self::buscar($id);

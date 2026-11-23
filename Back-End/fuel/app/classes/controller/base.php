@@ -2,16 +2,16 @@
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-// controller base da API, todos os controllers herdam dele.
-// verificação do token JWT.
+// controller base da API, todos os controllers herdam dele
+// verificação do token JWT
 class Controller_Base extends Controller_Rest
 {
     protected $rest_format = 'json';
 
-    // lista vazia responde 200 com []
+    // lista vazia responde 200
     protected $no_data_status = 200;
 
-    // ações que podem ser chamadas sem token, no formato "metodo_acao"
+    // ações que podem ser chamadas sem token
     protected $acoes_publicas = array();
 
     // id do usuário logado (vem de dentro do token)
@@ -48,7 +48,7 @@ class Controller_Base extends Controller_Rest
         return JWT::encode($dados, Config::get('jwt.segredo'), 'HS256');
     }
 
-    // le o token do cabeçalho Authorization. Devolve o id ou null se inválido.
+    // le o token do cabeçalho Authorization e devolve o id ou null se inválido.
     private function ler_token()
     {
         $cabecalho = Input::headers('Authorization', '');
@@ -77,7 +77,7 @@ class Controller_Base extends Controller_Rest
         exit;
     }
 
-    // le o corpo da requisição (JSON enviado pelo React)
+    // le o corpo da requisição
     protected function ler_dados()
     {
         $dados = Input::json();

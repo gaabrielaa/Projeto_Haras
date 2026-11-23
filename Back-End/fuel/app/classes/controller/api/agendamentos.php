@@ -1,8 +1,8 @@
 <?php
-// GET    /api/agendamentos     -> lista
-// POST   /api/agendamentos     -> agenda um serviço para um cavalo
-// GET    /api/agendamentos/5   -> consulta um
-// DELETE /api/agendamentos/5   -> cancela
+// get    /api/agendamentos      lista
+// post   /api/agendamentos      agenda um serviço para um cavalo
+// get    /api/agendamentos/5    consulta um
+// delete /api/agendamentos/5    cancela
 class Controller_Api_Agendamentos extends Controller_Base
 {
     public function get_index()
@@ -41,7 +41,7 @@ class Controller_Api_Agendamentos extends Controller_Base
             $erros[] = 'Selecione um serviço válido.';
         }
 
-        // O React envia a data como 2026-11-20T14:30
+        // o react envia a data como 2026-11-20T14:30
         $data_objeto = DateTime::createFromFormat('Y-m-d\TH:i', $data);
 
         if ( ! $data_objeto || $data_objeto->format('Y-m-d\TH:i') !== $data)

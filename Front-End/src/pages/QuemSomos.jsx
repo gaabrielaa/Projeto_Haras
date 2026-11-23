@@ -1,4 +1,3 @@
-// Página institucional (conteúdo fixo)
 const integrantes = [
   { nome: 'Gabriella Novaes', ra: '221839' },
   { nome: 'João Fernandes', ra: '221502' },

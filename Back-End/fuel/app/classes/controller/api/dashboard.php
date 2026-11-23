@@ -1,5 +1,5 @@
 <?php
-// GET /api/dashboard -> números do painel e agendamentos recentes
+// get /api/dashboard  números no painel e agendamentos recentes
 class Controller_Api_Dashboard extends Controller_Base
 {
     public function get_index()
