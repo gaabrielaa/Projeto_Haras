@@ -1,0 +1,13 @@
+Projeto: Sistema de Gestão de Haras
+
+Segue abaixo o link do vídeo de apresentação do projeto para acesso e avaliação.
+
+Link do vídeo:  
+https://screenapp.io/app/share/VNLVhCce9O5xqy22uuqBN5Dk
+
+Integrantes:
+- Gabriella Novaes – RA: 221839
+- João Pedro Fernandes – RA: 221502
+
+Curso: Tecnologia em Análise e Desenvolvimento de Sistemas (TADS)  
+Turma: 4º Termo
