@@ -2,16 +2,16 @@
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-// Controller base da API: todos os controllers herdam dele.
+// controller base da API, todos os controllers herdam dele.
 // verificação do token JWT.
 class Controller_Base extends Controller_Rest
 {
     protected $rest_format = 'json';
 
-    // Lista vazia deve responder 200 com [] (e não 204 sem conteúdo)
+    // lista vazia responde 200 com []
     protected $no_data_status = 200;
 
-    // Ações que podem ser chamadas sem token, no formato "metodo_acao"
+    // ações que podem ser chamadas sem token, no formato "metodo_acao"
     protected $acoes_publicas = array();
 
     // id do usuário logado (vem de dentro do token)
@@ -35,7 +35,7 @@ class Controller_Base extends Controller_Rest
         }
     }
 
-    // Cria um token com o id do usuário e a data de expiração
+    // cria um token com o id do usuário e a data de expiração
     protected function gerar_token($usuario_id)
     {
         $agora = time();
@@ -48,7 +48,7 @@ class Controller_Base extends Controller_Rest
         return JWT::encode($dados, Config::get('jwt.segredo'), 'HS256');
     }
 
-    // Lê o token do cabeçalho Authorization. Devolve o id ou null se inválido.
+    // le o token do cabeçalho Authorization. Devolve o id ou null se inválido.
     private function ler_token()
     {
         $cabecalho = Input::headers('Authorization', '');
@@ -69,7 +69,7 @@ class Controller_Base extends Controller_Rest
         }
     }
 
-    // Responde 401 e encerra a requisição
+    // responde 401 e encerra a requisição
     private function negar_acesso()
     {
         $corpo = json_encode(array('erro' => 'Acesso negado. Faça login novamente.'));
@@ -77,7 +77,7 @@ class Controller_Base extends Controller_Rest
         exit;
     }
 
-    // Lê o corpo da requisição (JSON enviado pelo React)
+    // le o corpo da requisição (JSON enviado pelo React)
     protected function ler_dados()
     {
         $dados = Input::json();

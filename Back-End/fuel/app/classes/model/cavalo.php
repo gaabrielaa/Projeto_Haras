@@ -1,8 +1,8 @@
 <?php
-// Acesso à tabela cavalos. Aqui fica a regra de ocupação das baias.
+// acesso à tabela cavalos, regra de ocupação das baias.
 class Model_Cavalo extends Model
 {
-    // Consulta base: cavalo + nome do proprietário + número da baia
+    // consulta base: cavalo + nome do proprietário + número da baia
     private static function consulta_base()
     {
         return DB::select(
@@ -28,7 +28,7 @@ class Model_Cavalo extends Model
         return count($linhas) > 0 ? $linhas[0] : null;
     }
 
-    // Cadastra o cavalo e, se ele tiver baia, marca a baia como ocupada
+    // cria o cavalo e, se ele tiver baia, marca a baia como ocupada
     public static function criar($nome, $raca, $nascimento, $proprietario_id, $baia_id)
     {
         DB::start_transaction();
@@ -60,7 +60,7 @@ class Model_Cavalo extends Model
         }
     }
 
-    // Atualiza o cavalo. Se a baia mudou, libera a antiga e ocupa a nova
+    // atualiza o cavalo. Se a baia mudou, libera a antiga e ocupa a nova
     public static function atualizar($id, $nome, $raca, $nascimento, $proprietario_id, $nova_baia_id)
     {
         $atual = self::buscar($id);
@@ -102,7 +102,7 @@ class Model_Cavalo extends Model
         }
     }
 
-    // Remove os agendamentos do cavalo, o cavalo e libera a baia dele
+    // remove os agendamentos do cavalo, o cavalo e libera a baia dele
     public static function excluir($id)
     {
         $atual = self::buscar($id);

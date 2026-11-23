@@ -1,4 +1,4 @@
-// Todas as chamadas à API passam por aqui
+// todas as chamadasa API passam por aqui
 const URL_BASE = '/api';
 
 export function pegarToken() {
@@ -15,7 +15,7 @@ export function limparSessao() {
   localStorage.removeItem('usuario');
 }
 
-// caminho: ex. '/auth/eu'   metodo: GET, POST, PUT ou DELETE
+// ex. '/auth/eu'   metodo: GET, POST, PUT ou DELETE
 export async function requisicao(caminho, metodo = 'GET', dados = null) {
   const opcoes = {
     method: metodo,
@@ -35,7 +35,7 @@ export async function requisicao(caminho, metodo = 'GET', dados = null) {
   const resposta = await fetch(URL_BASE + caminho, opcoes);
   const corpo = await resposta.json().catch(() => ({}));
 
-  // Token vencido ou inválido: volta para o login
+  // Token vencido ou inválido, volta para o login
   if (resposta.status === 401 && token && caminho !== '/auth/login') {
     limparSessao();
     window.location.href = '/login';

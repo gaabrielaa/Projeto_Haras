@@ -6,7 +6,7 @@ import { listarBaias } from '../services/baias';
 
 const FORM_VAZIO = { nome: '', raca: '', data_nascimento: '', proprietario_id: '', baia_id: '' };
 
-// A data vem do banco como 2018-05-10 e é mostrada como 10/05/2018
+// a data vem como 2018-05-10 e é mostrada como 10/05/2018
 function formatarData(data) {
   if (!data) return '-';
   const [ano, mes, dia] = data.split('-');
@@ -44,8 +44,8 @@ function Cavalos() {
     carregar();
   }, []);
 
-  // Só baias livres podem ser escolhidas (mais a baia atual do cavalo, ao editar).
-  // Os ids vêm como texto da API, por isso a comparação com String().
+  // só baias livres podem ser escolhidas (mais a baia atual do cavalo, ao editar).
+  // os ids vêm como texto da API, comparação com String().
   const baiasDisponiveis = baias.filter(
     (b) => b.status === 'livre' || String(b.id) === baiaOriginal
   );
@@ -102,7 +102,7 @@ function Cavalos() {
         setMensagem('Cavalo atualizado.');
       }
       setModalAberto(false);
-      await carregar(); // recarrega também as baias, que mudam de status
+      await carregar(); // atualiza também as baias, mudando de status
     } catch (erroApi) {
       setErroForm(erroApi.message);
     } finally {
